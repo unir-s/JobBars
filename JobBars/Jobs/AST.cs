@@ -80,11 +80,16 @@ namespace JobBars.Jobs {
                 CD = 60,
                 Triggers = [new Item(ActionIds.EarthlyStar)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.AST)})", new CooldownProps {
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.AST)}) (60s)", new CooldownProps {
+                Icon = ActionIds.Swiftcast,
+                CD = 60,
+                Triggers = [new Item(ActionIds.Swiftcast)]
+            }, 0, 93),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.AST)}) (40s)", new CooldownProps {
                 Icon = ActionIds.Swiftcast,
                 CD = 40,
                 Triggers = [new Item(ActionIds.Swiftcast)]
-            })
+            }, 94)
         ];
 
         public static IconReplacer[] Icons => [
