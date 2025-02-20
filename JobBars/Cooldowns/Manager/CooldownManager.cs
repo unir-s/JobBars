@@ -25,16 +25,17 @@ namespace JobBars.Cooldowns.Manager {
         }
 
         public CooldownConfig[] GetCooldownConfigs( JobIds job, byte level ) {
-            List<CooldownConfig> configs = [];
+            List<CooldownConfig> configs = new();
             if( JobToValue.TryGetValue( job, out var props ) ) configs.AddRange( props );
             if( CustomCooldowns.TryGetValue( job, out var customProps ) ) configs.AddRange( customProps );
             if( JobBars.Configuration.CooldownsHideUnavailableActions ) {
                 configs = configs.FindAll( config => config.Triggers.Any( item => {
-                    if ( item.Type != ItemType.Action ) return true;
-                    return UiHelper.IsActionAvailableAtLevel( item.Id, level );
+                    if( item.Type != ItemType.Action ) return true;
+                    return UiHelper.IsActionAvailableAtLevel(item.Id, level);
                 } ) );
             }
-            return [.. configs];
+            configs = configs.FindAll(x => x.MinLevel < level && level < x.MaxLevel);
+            return configs.ToArray();
         }
 
         public void PerformAction( Item action, uint objectId ) {
