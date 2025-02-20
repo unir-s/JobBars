@@ -18,21 +18,25 @@ namespace JobBars.Cooldowns {
         public readonly Item[] Triggers;
         public readonly float Duration;
         public readonly float CD;
+        public readonly byte MinLevel;
+        public readonly byte MaxLevel;
 
         public bool Enabled { get; private set; }
         public int Order { get; private set; }
         public bool ShowBorderWhenActive { get; private set; }
         public bool ShowBorderWhenOffCD { get; private set; }
 
-        public CooldownConfig( string name, CooldownProps props ) : this( name, name, props ) { }
+        public CooldownConfig( string name, CooldownProps props, byte minLevel = 0, byte maxLevel = 255 ) : this( name, name, props, minLevel, maxLevel ) { }
 
-        public CooldownConfig( string name, string id, CooldownProps props ) {
+        public CooldownConfig( string name, string id, CooldownProps props, byte minLevel = 0, byte maxLevel = 255 ) {
             Name = name;
             NameId = id;
             Icon = props.Icon;
             Triggers = props.Triggers;
             Duration = props.Duration;
             CD = props.CD;
+            MinLevel = minLevel;
+            MaxLevel = maxLevel;
             Enabled = JobBars.Configuration.CooldownEnabled.Get( NameId );
             Order = JobBars.Configuration.CooldownOrder.Get( NameId );
             ShowBorderWhenActive = JobBars.Configuration.CooldownShowBorderWhenActive.Get( NameId );

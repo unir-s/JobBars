@@ -51,11 +51,18 @@ namespace JobBars.Jobs {
                 CD = 120,
                 Triggers = [new Item(ActionIds.Panhaima)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.SGE)})", new CooldownProps {
-                Icon = ActionIds.Swiftcast,
-                CD = 40,
-                Triggers = [new Item(ActionIds.Swiftcast)]
-            })
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.SGE)}) (60s)",
+                new CooldownProps {
+                    Icon = ActionIds.Swiftcast,
+                    CD = 60,
+                    Triggers = [new Item(ActionIds.Swiftcast)]
+            }, 0, 93),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Swiftcast)} ({UiHelper.Localize(JobIds.SGE)}) (40s)",
+                new CooldownProps {
+                    Icon = ActionIds.Swiftcast,
+                    CD = 40,
+                    Triggers = [new Item(ActionIds.Swiftcast)]
+            }, 94)
         ];
 
         public static IconReplacer[] Icons => [
