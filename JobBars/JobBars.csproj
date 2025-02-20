@@ -1,5 +1,7 @@
-<Project Sdk="Dalamud.NET.Sdk/13.0.0">
+<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
+    <TargetFramework>net9.0-windows</TargetFramework>
+    <LangVersion>latest</LangVersion>
     <AssemblyTitle>JobBars</AssemblyTitle>
     <Company></Company>
     <Product>JobBars</Product>
@@ -34,12 +36,54 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>
   </ItemGroup>
-  
+
   <ItemGroup>
     <None Include="..\.editorconfig" Link=".editorconfig" />
   </ItemGroup>
-  
+
   <ItemGroup>
     <ProjectReference Include="..\KamiToolKit\KamiToolKit.csproj" />
+  </ItemGroup>
+
+  <PropertyGroup>
+    <DalamudLibPath>../../DalamudHooks/dev/</DalamudLibPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="FFXIVClientStructs">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)FFXIVClientStructs.dll</HintPath>
+    </Reference>
+    <Reference Include="Dalamud.Bindings.ImGui">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)Dalamud.Bindings.ImGui.dll</HintPath>
+    </Reference>
+    <Reference Include="Dalamud.Bindings.ImGuizmo">
+    <Private>false</Private>
+    <HintPath>$(DalamudLibPath)Dalamud.Bindings.ImGuizmo.dll</HintPath>
+    </Reference>
+    <Reference Include="Dalamud.Bindings.ImPlot">
+    <Private>false</Private>
+    <HintPath>$(DalamudLibPath)Dalamud.Bindings.ImPlot.dll</HintPath>
+    </Reference>
+    <Reference Include="Dalamud">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)Dalamud.dll</HintPath>
+    </Reference>
+    <Reference Include="ImGuiScene">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)ImGuiScene.dll</HintPath>
+    </Reference>
+    <Reference Include="Lumina">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)Lumina.dll</HintPath>
+    </Reference>
+    <Reference Include="Lumina.Excel">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)Lumina.Excel.dll</HintPath>
+    </Reference>
+    <Reference Include="InteropGenerator.Runtime">
+      <Private>false</Private>
+      <HintPath>$(DalamudLibPath)InteropGenerator.Runtime.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>
