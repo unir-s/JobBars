@@ -60,8 +60,8 @@ namespace JobBars.Jobs {
                 CD = 420,
                 Triggers = [new Item(ActionIds.HallowedGround)]
             }),
-            new CooldownConfig(UiHelper.Localize(ActionIds.Guardian), new CooldownProps {
-                Icon = ActionIds.Guardian,
+            new CooldownConfig(UiHelper.Localize(ActionIds.Sentinel), new CooldownProps {
+                Icon = ActionIds.Sentinel,
                 Duration = 15,
                 CD = 120,
                 Triggers = [
@@ -87,12 +87,18 @@ namespace JobBars.Jobs {
                 CD = 120,
                 Triggers = [new Item(ActionIds.ArmsLength)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.PLD)})", new CooldownProps {
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.PLD)}) (10s)", new CooldownProps {
+                Icon = ActionIds.Reprisal,
+                Duration = 10,
+                CD = 60,
+                Triggers = [new Item(ActionIds.Reprisal)]
+            }, 0, 97),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.PLD)}) (15s)", new CooldownProps {
                 Icon = ActionIds.Reprisal,
                 Duration = 15,
                 CD = 60,
                 Triggers = [new Item(ActionIds.Reprisal)]
-            }),
+            }, 98),
             new CooldownConfig(UiHelper.Localize(ActionIds.DivineVeil), new CooldownProps {
                 Icon = ActionIds.DivineVeil,
                 Duration = 30,
