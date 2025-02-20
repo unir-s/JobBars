@@ -32,8 +32,8 @@ namespace JobBars.Jobs {
                 CD = 360,
                 Triggers = [new Item(ActionIds.Superbolide)]
             }),
-            new CooldownConfig(UiHelper.Localize(ActionIds.GreatNebula), new CooldownProps {
-                Icon = ActionIds.GreatNebula,
+            new CooldownConfig(UiHelper.Localize(ActionIds.Nebula), new CooldownProps {
+                Icon = ActionIds.Nebula,
                 Duration = 15,
                 CD = 120,
                 Triggers = [
@@ -59,12 +59,18 @@ namespace JobBars.Jobs {
                 CD = 120,
                 Triggers = [new Item(ActionIds.ArmsLength)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)})", new CooldownProps {
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)}) (10s)", new CooldownProps {
+                Icon = ActionIds.Reprisal,
+                Duration = 10,
+                CD = 60,
+                Triggers = [new Item(ActionIds.Reprisal)]
+            }, 0, 97),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)}) (15s)", new CooldownProps {
                 Icon = ActionIds.Reprisal,
                 Duration = 15,
                 CD = 60,
                 Triggers = [new Item(ActionIds.Reprisal)]
-            }),
+            }, 98),
             new CooldownConfig(UiHelper.Localize(ActionIds.HeartOfLight), new CooldownProps {
                 Icon = ActionIds.HeartOfLight,
                 Duration = 15,
