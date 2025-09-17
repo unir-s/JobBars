@@ -48,12 +48,39 @@ namespace JobBars.Jobs {
                 CD = 240,
                 Triggers = [new Item(ActionIds.Holmgang)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.WAR)})", new CooldownProps {
+            new CooldownConfig(UiHelper.Localize(ActionIds.Vengeance), new CooldownProps {
+                Icon = ActionIds.Vengeance,
+                Duration = 15,
+                CD = 120,
+                Triggers = [
+                    new Item(ActionIds.Damnation),
+                    new Item(ActionIds.Vengeance),
+                ]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Rampart)} ({UiHelper.Localize(JobIds.WAR)})", new CooldownProps {
+                Icon = ActionIds.Rampart,
+                Duration = 20,
+                CD = 90,
+                Triggers = [new Item(ActionIds.Rampart)]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.ArmsLength)} ({UiHelper.Localize(JobIds.WAR)})", new CooldownProps {
+                Icon = ActionIds.ArmsLength,
+                Duration = 6,
+                CD = 120,
+                Triggers = [new Item(ActionIds.ArmsLength)]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.WAR)}) (10s)", new CooldownProps {
+                Icon = ActionIds.Reprisal,
+                Duration = 10,
+                CD = 60,
+                Triggers = [new Item(ActionIds.Reprisal)]
+            }, 0, 97),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.WAR)}) (15s)", new CooldownProps {
                 Icon = ActionIds.Reprisal,
                 Duration = 15,
                 CD = 60,
                 Triggers = [new Item(ActionIds.Reprisal)]
-            }),
+            }, 98),
             new CooldownConfig(UiHelper.Localize(ActionIds.ShakeItOff), new CooldownProps {
                 Icon = ActionIds.ShakeItOff,
                 Duration = 15,
@@ -62,7 +89,7 @@ namespace JobBars.Jobs {
             }),
             new CooldownConfig(UiHelper.Localize(ActionIds.Bloodwhetting), new CooldownProps {
                 Icon = ActionIds.Bloodwhetting,
-                Duration = 6,
+                Duration = 8,
                 CD = 25,
                 Triggers = [
                     new Item(ActionIds.NascentFlash),

@@ -59,6 +59,7 @@ namespace JobBars.Data {
         public bool GaugesEnabled = true;
         public bool GaugesHideOutOfCombat = false;
         public bool GaugesHideWeaponSheathed = false;
+        public bool GaugesShowWeaponUnsheathed = false;
         public bool GaugeGCDTextVisible = true;
 
         public GaugePositionType GaugePositionType = GaugePositionType.Global;
@@ -126,6 +127,7 @@ namespace JobBars.Data {
         public bool CooldownsHideWeaponSheathed = false;
         public bool CooldownsHideActiveBuffDuration = false;
         public bool CooldownsShowPartyMembers = true;
+        public bool CooldownsHideUnavailableActions = true;
         public float CooldownsOnCDOpacity = 1.0f;
 
         public bool CooldownsStateShowDefault = true;

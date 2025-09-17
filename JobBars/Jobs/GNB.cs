@@ -32,17 +32,59 @@ namespace JobBars.Jobs {
                 CD = 360,
                 Triggers = [new Item(ActionIds.Superbolide)]
             }),
-            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)})", new CooldownProps {
+            new CooldownConfig(UiHelper.Localize(ActionIds.Nebula), new CooldownProps {
+                Icon = ActionIds.Nebula,
+                Duration = 15,
+                CD = 120,
+                Triggers = [
+                    new Item(ActionIds.GreatNebula),
+                    new Item(ActionIds.Nebula),
+                ]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Rampart)} ({UiHelper.Localize(JobIds.GNB)})", new CooldownProps {
+                Icon = ActionIds.Rampart,
+                Duration = 20,
+                CD = 90,
+                Triggers = [new Item(ActionIds.Rampart)]
+            }),
+            new CooldownConfig(UiHelper.Localize(ActionIds.Camouflage), new CooldownProps {
+                Icon = ActionIds.Camouflage,
+                Duration = 20,
+                CD = 90,
+                Triggers = [new Item(ActionIds.Camouflage)]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.ArmsLength)} ({UiHelper.Localize(JobIds.GNB)})", new CooldownProps {
+                Icon = ActionIds.ArmsLength,
+                Duration = 6,
+                CD = 120,
+                Triggers = [new Item(ActionIds.ArmsLength)]
+            }),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)}) (10s)", new CooldownProps {
+                Icon = ActionIds.Reprisal,
+                Duration = 10,
+                CD = 60,
+                Triggers = [new Item(ActionIds.Reprisal)]
+            }, 0, 97),
+            new CooldownConfig($"{UiHelper.Localize(ActionIds.Reprisal)} ({UiHelper.Localize(JobIds.GNB)}) (15s)", new CooldownProps {
                 Icon = ActionIds.Reprisal,
                 Duration = 15,
                 CD = 60,
                 Triggers = [new Item(ActionIds.Reprisal)]
-            }),
+            }, 98),
             new CooldownConfig(UiHelper.Localize(ActionIds.HeartOfLight), new CooldownProps {
                 Icon = ActionIds.HeartOfLight,
                 Duration = 15,
                 CD = 90,
                 Triggers = [new Item(ActionIds.HeartOfLight)]
+            }),
+            new CooldownConfig(UiHelper.Localize(ActionIds.HeartOfCorundum), new CooldownProps {
+                Icon = ActionIds.HeartOfCorundum,
+                Duration = 8,
+                CD = 25,
+                Triggers = [
+                    new Item(ActionIds.HeartOfCorundum),
+                    new Item(ActionIds.HeartOfStone)
+                ]
             })
         ];
 
